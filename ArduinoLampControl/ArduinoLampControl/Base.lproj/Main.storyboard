@@ -16,8 +16,31 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-At-vbD">
+                                <rect key="frame" x="276" y="284" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="TVg-Eq-ddL"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-Q2-DXV">
+                                <rect key="frame" x="279" y="251" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ThH-At-vbD" firstAttribute="top" secondItem="a3g-Q2-DXV" secondAttribute="bottom" constant="12" id="BMg-eh-gRv"/>
+                            <constraint firstItem="ThH-At-vbD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MVM-PJ-AxS"/>
+                            <constraint firstItem="ThH-At-vbD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gTU-zj-wFL"/>
+                            <constraint firstItem="a3g-Q2-DXV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xKh-7P-1Tv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ledLabel" destination="a3g-Q2-DXV" id="rfL-xW-Y1g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
