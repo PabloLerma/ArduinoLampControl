@@ -11,14 +11,14 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet private weak var ledLabel: UILabel!
-    private let session = NSURLSession.sharedSession()
+    private let session = URLSession.shared
 
     var ledState: Bool = false {
         didSet {
             ledLabel.text = "Led is \(ledState ? "ON" : "OFF")"
             let url = ledState ? "http://192.168.1.177/$1" : "http://192.168.1.177/$2"
-            session.dataTaskWithURL(NSURL(string: url)!) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
-                print(error)
+            session.dataTask(with: URL(string: url)!) { (data: Data?, response: URLResponse?, error: Error?) in
+                print("data :\(data) / error: \(error)")
             }.resume()
         }
     }
@@ -30,6 +30,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func switchChanged(sender: UISwitch) {
-        ledState = sender.on
+        ledState = sender.isOn
     }
 }
